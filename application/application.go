@@ -5,12 +5,16 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/idoyudha/bookstore_items_api/clients/elasticsearch"
 )
 
 var router = mux.NewRouter()
 
 func StartApplication() {
+	elasticsearch.GetEsClient()
+
 	mapUrls()
+
 	srv := &http.Server{
 		Addr:         "localhost:8080",
 		WriteTimeout: 500 * time.Millisecond,
