@@ -1,18 +1,26 @@
 package elasticsearch
 
 import (
+	"bytes"
+	"context"
 	"crypto/tls"
+	"encoding/json"
+	"fmt"
+	"log"
 	"net"
 	"net/http"
 	"time"
 
+	"github.com/elastic/go-elasticsearch/esapi"
 	elasticsearch "github.com/elastic/go-elasticsearch/v8"
+	"github.com/idoyudha/bookstore_items_api/logger"
 )
 
 var Client esClientInterface = &esClient{}
 
 type esClientInterface interface {
 	setClient(*elasticsearch.Client)
+	Index(string, interface{}) (*esapi.Response, error)
 }
 
 type esClient struct {
@@ -45,4 +53,28 @@ func GetEsClient() {
 
 func (c *esClient) setClient(client *elasticsearch.Client) {
 	c.client = client
+}
+
+func (c *esClient) Index(index string, doc interface{}) (*esapi.Response, error) {
+	// Build the request body.
+	data, errMarshall := json.Marshal(doc)
+	if errMarshall != nil {
+		log.Fatalf("Error marshaling document: %s", errMarshall)
+	}
+
+	// Set up the request object.
+	req := esapi.IndexRequest{
+		Index: index,
+		// DocumentID: strconv.Itoa(id + 1),
+		Body:    bytes.NewReader(data),
+		Refresh: "true",
+	}
+
+	res, err := req.Do(context.Background(), c.client)
+	if err != nil {
+		logger.Error(
+			fmt.Sprintf("error when trying to index document in index %s", index), err)
+		return nil, err
+	}
+	return res, nil
 }
