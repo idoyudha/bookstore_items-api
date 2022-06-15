@@ -6,7 +6,7 @@ require (
 	github.com/elastic/go-elasticsearch/v8 v8.2.0
 	github.com/gorilla/mux v1.8.0
 	github.com/idoyudha/bookstore_oauth-go v0.0.0-20220601140133-212193c06461
-	github.com/idoyudha/bookstore_utils-go v0.0.0-20220601160254-f23915b81956
+	github.com/idoyudha/bookstore_utils-go v0.0.0-20220614142422-c3b4e657516e
 )
 
 require (
