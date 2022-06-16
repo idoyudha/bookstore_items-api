@@ -13,7 +13,7 @@ import (
 
 	"github.com/elastic/go-elasticsearch/esapi"
 	elasticsearch "github.com/elastic/go-elasticsearch/v8"
-	"github.com/idoyudha/bookstore_items_api/logger"
+	"github.com/idoyudha/bookstore_utils-go/logger"
 )
 
 var Client esClientInterface = &esClient{}

@@ -16,6 +16,8 @@ github.com/idoyudha/bookstore_utils-go v0.0.0-20220601160254-f23915b81956 h1:Q2Y
 github.com/idoyudha/bookstore_utils-go v0.0.0-20220601160254-f23915b81956/go.mod h1:4lOkc0MBD7tgQaZ7UKCnOJDXiCw8nPM25lIa3pdMHz0=
 github.com/idoyudha/bookstore_utils-go v0.0.0-20220614142422-c3b4e657516e h1:OVv4VOFaKRj1mZAuLML3gArYrMPFCc7b2z9bYXVXzto=
 github.com/idoyudha/bookstore_utils-go v0.0.0-20220614142422-c3b4e657516e/go.mod h1:4lOkc0MBD7tgQaZ7UKCnOJDXiCw8nPM25lIa3pdMHz0=
+github.com/idoyudha/bookstore_utils-go v0.0.0-20220616094424-985fb18ab72f h1:1sCvBphQ+yKZX8S31gVjDxlt3VrQUVuHqJyE5EQZWkM=
+github.com/idoyudha/bookstore_utils-go v0.0.0-20220616094424-985fb18ab72f/go.mod h1:Fmrn43vJA2QiZB9U/zrPdwsEdF/zEaJMKxSV+KNz+gA=
 github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORNo=
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
