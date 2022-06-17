@@ -10,13 +10,13 @@ import (
 var ItemsServices itemsServiceInterface = &itemsService{}
 
 type itemsServiceInterface interface {
-	Create(items.Item) (*items.Item, *rest_errors.RestErr)
-	Get(items.Item) (*items.Item, *rest_errors.RestErr)
+	Create(items.Item) (*items.Item, rest_errors.RestErr)
+	Get(items.Item) (*items.Item, rest_errors.RestErr)
 }
 
 type itemsService struct{}
 
-func (s *itemsService) Create(item items.Item) (*items.Item, *rest_errors.RestErr) {
+func (s *itemsService) Create(item items.Item) (*items.Item, rest_errors.RestErr) {
 	if err := item.Save(); err != nil {
 		return nil, err
 	}
@@ -24,10 +24,6 @@ func (s *itemsService) Create(item items.Item) (*items.Item, *rest_errors.RestEr
 	return &item, nil
 }
 
-func (s *itemsService) Get(items.Item) (*items.Item, *rest_errors.RestErr) {
-	return nil, &rest_errors.RestErr{
-		Status:  http.StatusNotImplemented,
-		Message: "implement me!",
-		Error:   "not_implemented",
-	}
+func (s *itemsService) Get(items.Item) (*items.Item, rest_errors.RestErr) {
+	return nil, rest_errors.NewRestError("implement me!", http.StatusNotImplemented, "not_implemented", nil)
 }
