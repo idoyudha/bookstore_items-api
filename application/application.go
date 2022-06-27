@@ -16,7 +16,7 @@ func StartApplication() {
 	mapUrls()
 
 	srv := &http.Server{
-		Addr:         "localhost:8080",
+		Addr:         "localhost:8081",
 		WriteTimeout: 500 * time.Millisecond,
 		ReadTimeout:  2 * time.Second,
 		IdleTimeout:  60 * time.Second,

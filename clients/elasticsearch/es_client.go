@@ -21,6 +21,7 @@ var Client esClientInterface = &esClient{}
 type esClientInterface interface {
 	setClient(*elasticsearch.Client)
 	Index(string, interface{}) (*esapi.Response, error)
+	Get(string, string) (*esapi.Response, error)
 }
 
 type esClient struct {
@@ -77,4 +78,10 @@ func (c *esClient) Index(index string, doc interface{}) (*esapi.Response, error)
 		return nil, err
 	}
 	return res, nil
+}
+
+func (c *esClient) Get(index string, id string) (*esapi.Response, error) {
+	// ctx := context.Background()
+	// result, err := c.client.Get()
+	return nil, nil
 }
